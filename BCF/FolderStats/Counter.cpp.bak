@@ -1,0 +1,46 @@
+#include "Counter.h"
+
+using std::filesystem::recursive_directory_iterator;
+
+bool chcekIfExist(std::string TargetLocation_tmp)
+{
+	bool return_val = false;
+	if(std::filesystem::exists(TargetLocation_tmp)
+	{
+		if(std::filesystem::is_directory(TargetLocation_tmp)
+		{
+			return_val = true;
+		}else
+		{
+	   		std::cout << "Target is not a directory!" << std:endl;
+		}
+	}else
+	{
+		std::cout << "Path do not exist!" << std:endl;
+	} 
+	return return_val;
+}	
+
+bool SetTargetLocation(std::string TargetLocation_tmp)
+{
+	bool return_val = false;
+	if(checkIfExist(TargetLocation_tmp)
+	{
+		this.TargetLocation = TargetLocation_tmp;
+		return_val = true;
+	}
+	return return_val; 
+}
+
+void SearchForFiles()
+{
+	string tmp_path;
+	for (const auto & file : recursive_directory_iterator(sPath))
+	{
+		if(!(file.is_directory()))
+		{
+			tmp_path = file.path().string());
+			this.FilesInFolderAndSubfolders.push_back(tmp_path);
+		}
+	}
+}
